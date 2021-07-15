@@ -79,6 +79,9 @@ func main() {
 
 	fmt.Println(jiraIssueSummary)
 
+	fmt.Println("")
+	ProcessTransitions(jiraIssueSummary)
+
 }
 
 func GetIssue(issueID string) string {
@@ -104,5 +107,11 @@ func GetIssue(issueID string) string {
 }
 
 func ProcessTransitions(summary JIRAIssueSummary) {
+
+	fmt.Println(summary.Key)
+
+	for _, transition := range summary.Transitions {
+		fmt.Println(transition)
+	}
 
 }
